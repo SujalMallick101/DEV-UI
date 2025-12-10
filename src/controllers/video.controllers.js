@@ -1,7 +1,7 @@
-import { asyncHandler } from "../utils/asyncHandler";
+import { asyncHandler } from "../utils/asyncHandler.js";
 import { Video } from "../models/video.models.js";
-import { ApiError } from "../utils/ApiError";
-import { ApiResponse } from "../utils/ApiResponse";
+import { ApiError } from "../utils/ApiError.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
 
 const getAllVideos = asyncHandler(async (req, res) => {
@@ -64,7 +64,7 @@ const publishVideo = asyncHandler(async (req, res) => {
         throw new ApiError(400, "Title and Description are required");
     }
 
-    const videoFile = req.files?.VideoFile?.[0]?.path;
+    const videoFile = req.files?.videoFile?.[0]?.path;
     const thumbnail = req.files?.thumbnail?.[0]?.path;
 
     if (!videoFile || !thumbnail) {
