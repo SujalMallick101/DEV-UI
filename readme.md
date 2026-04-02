@@ -1,1 +1,1 @@
-Backend for DEV-UI project
+Backend for DEV-UI project which is a video streaming application 
